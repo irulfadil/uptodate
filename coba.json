@@ -1,0 +1,32 @@
+[
+
+    {
+        "nama":"muhammad choirul amin fadil",
+        "umur": 33,
+        "prodi":"Teknik Informatika",
+        "lulus":"true",
+        "hobi": [
+            "basket",
+            "membaca"
+        ],
+        "pembimbing" :{
+            "pembimbing1":"sukarno",
+            "pembimbing2":"suharto"
+        }
+    },
+    
+    {
+        "nama":"Dian Sastro",
+        "umur": 30,
+        "prodi":"Filsafat",
+        "lulus":"true",
+        "hobi": [
+            "membaca",
+            "menulis"
+        ],
+        "pembimbing" :{
+            "pembimbing1":"megawati",
+            "pembimbing2":"agus salim"
+        }
+    }
+]
