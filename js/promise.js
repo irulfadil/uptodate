@@ -57,12 +57,12 @@ const cuaca = new Promise((resolve)=>{
 
 // dan bisa juga kita membuat jadi satu
 Promise.all([film, cuaca])
-    .then(response => console.log(response));
+    // .then(response => console.log(response));
     // output array of object jadi satu
-//     .then(response => {
-//         const [film, cuaca] = response;
-//         console.log(film);
-//         console.log(cuaca);
-//     });
+    .then(response => {
+        const [film, cuaca] = response;
+        console.log(film);
+        console.log(cuaca);
+    });
 //output array of object dipecah menggunakan spreate operator
 
