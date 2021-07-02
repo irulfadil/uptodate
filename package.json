@@ -1,0 +1,33 @@
+{
+  "name": "uptodate",
+  "version": "1.0.0",
+  "description": "Repo belajar : ini berisi tentang berbagai macam testing code sebelum digunakan diaplikasi sebenarnya.\r - HTML\r - CSS\r - PHP\r - JAVASCRIPT\r - JAVA",
+  "main": "js/apps.js",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "fs": "^0.0.1-security",
+    "mysql": "^2.18.1",
+    "readline": "^1.3.0",
+    "routes": "^2.1.0",
+    "swig": "^1.4.2",
+    "validator": "^13.5.2",
+    "yargs": "^17.0.0-candidate.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irulfadil/belajar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irulfadil/belajar/issues"
+  },
+  "homepage": "https://github.com/irulfadil/belajar#readme"
+}

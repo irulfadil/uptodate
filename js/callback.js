@@ -27,7 +27,7 @@
 //     }
 // ];
 // menampilkan data namanya saja
-// mhs.forEach(m => console.log(m.nama)); 
+// mhs.forEach(m => console.log(m.nama));
 // higher order function juga menrupakan callback funtion (teknik arow funtion)
 // =========
 
@@ -40,7 +40,7 @@
 //         let date = new Date();
 //     }
 //     console.log(m.nama);
-// }); 
+// });
 // console.log('selesai');
 
 //Asynchronous Callback
@@ -74,57 +74,59 @@
 //pakai jquery
 // console.log('mulai');
 // $.ajax({
-    //     url: 'json/coba.json',
-    //     success: function(m){
-        //         m.forEach(m => {
-            //             console.log(m.nama);
-            //         });
-            //     },
-            //     error: function(){
-                //             console.log('error');
-                //     }
-                // });
-                // console.log('selesai');
-
+//     url: 'json/coba.json',
+//     success: function(m){
+//         m.forEach(m => {
+//             console.log(m.nama);
+//         });
+//     },
+//     error: function(){
+//             console.log('error');
+//     }
+// });
+// console.log('selesai');
 
 //Latihan callback (kasus nyata);
-// kita akan mengakses API online gratis 
+// kita akan mengakses API online gratis
 // Postman = aplikasi untuk request  terhadap API, untuk melihat
 //tombol serch
 // apakah API kita terkoneksi
-$('.search-button').on('click', function(){
-    $.ajax({
-        url:'http://www.omdbapi.com/?apikey=4e62426a&s='+ $('.input-keyword').val(),
-        success: results => {
-            const movies = results.Search; //untuk menghilangkan key Search, karna search bawaan dari API.
-                let cards = ''; //pakai let karna nilai variabel akan kita ubah nanti
-                movies.forEach(m => {
-                cards += showCards(m);
-            });
-            $('.movies').html(cards);
-            
-            //ketika tombol diklik maka muncul detail movies
-            $('.detail-movies').on('click', function(){
-                $.ajax({
-                    url: 'http://www.omdbapi.com/?apikey=4e62426a&i='+ $(this).data('imdbid'),
-                    success: function(m){
-                    const movieDetail = showDetail(m);
-                    $('.modal-body').html(movieDetail);
-                },
-                    error: (e)=>{
-                    console.log(e.responseText);
-                    }
-                });
-            });
-        },
-        error: (e) => {
+$(".search-button").on("click", function () {
+  $.ajax({
+    url:
+      "http://www.omdbapi.com/?apikey=4e62426a&s=" + $(".input-keyword").val(),
+    success: (results) => {
+      const movies = results.Search; //untuk menghilangkan key Search, karna search bawaan dari API.
+      let cards = ""; //pakai let karna nilai variabel akan kita ubah nanti
+      movies.forEach((m) => {
+        cards += showCards(m);
+      });
+      $(".movies").html(cards);
+
+      //ketika tombol diklik maka muncul detail movies
+      $(".detail-movies").on("click", function () {
+        $.ajax({
+          url:
+            "http://www.omdbapi.com/?apikey=4e62426a&i=" +
+            $(this).data("imdbid"),
+          success: function (m) {
+            const movieDetail = showDetail(m);
+            $(".modal-body").html(movieDetail);
+          },
+          error: (e) => {
             console.log(e.responseText);
-        }});
+          },
+        });
+      });
+    },
+    error: (e) => {
+      console.log(e.responseText);
+    },
+  });
 });
 
-
-function showCards(m){
-        return `
+function showCards(m) {
+  return `
         <div class="col-sm-3 my-2">
         <div class="card">
             <img src="${m.Poster}" class="card-img-top" alt="...">
@@ -137,8 +139,8 @@ function showCards(m){
         </div>`;
 }
 
-function showDetail(m){
-        return `
+function showDetail(m) {
+  return `
         <div class="container-fluid">
             <div class="row">
             <div class="col-md-3">
@@ -156,4 +158,3 @@ function showDetail(m){
     </div>
 </div>`;
 }
-
